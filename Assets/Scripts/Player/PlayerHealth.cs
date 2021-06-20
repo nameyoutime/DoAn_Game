@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth Instance;
     public int playerHealth = 1;
     private GameObject parent;
-
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     void Start()
     {
         parent = transform.parent.gameObject;
@@ -17,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth == 0)
         {
             Destroy(parent);
+            PauseMenu.Instance.deathPanel();
         }
     }
     public void test()

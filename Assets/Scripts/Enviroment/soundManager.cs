@@ -17,7 +17,7 @@ public class soundManager : MonoBehaviour
     {
         Jump = Resources.Load<AudioClip>("sounds/jump");
         Gem = Resources.Load<AudioClip>("sounds/gem");
-        // Course_clear = Resources.Load<AudioClip>("course_clear");
+        Course_clear = Resources.Load<AudioClip>("sounds/course_clear");
 
         sound = GetComponent<AudioSource>();
     }
@@ -37,9 +37,9 @@ public class soundManager : MonoBehaviour
             case "gems":
                 sound.PlayOneShot(Gem, 0.5f);
                 break;
-            // case "course_clear":
-            //     sound.PlayOneShot(Course_clear, 1f);
-            //     break;
+            case "course_clear":
+                sound.PlayOneShot(Course_clear, 1f);
+                break;
             default:
                 break;
         }

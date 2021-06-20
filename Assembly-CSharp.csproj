@@ -36,26 +36,35 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BackGround\ParallaxBackground.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Player\mainCamera.cs" />
-     <Compile Include="Assets\Scripts\Enviroment\soundManager.cs" />
-     <Compile Include="Assets\Scripts\Enviroment\scoreCounter.cs" />
-     <Compile Include="Assets\Scripts\Items\coins.cs" />
-     <Compile Include="Assets\Scripts\Enemy\GroundPatrol.cs" />
-     <Compile Include="Assets\Scripts\Enemy\PlatformPatrol.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHp.cs" />
+     <Compile Include="Assets\Scripts\Player\mainCamera.cs" />
      <Compile Include="Assets\Scripts\Player\Stomper.cs" />
+     <Compile Include="Assets\Scripts\Enviroment\gameMaster.cs" />
      <Compile Include="Assets\Scripts\Player\groundCheck.cs" />
      <Compile Include="Assets\Scripts\PlatForm\FallingPlat.cs" />
-     <Compile Include="Assets\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PlatformPatrol.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\gameMaster.cs" />
-     <Compile Include="Assets\Scripts\checkPoint.cs" />
-     <Compile Include="Assets\Scripts\PlayerPos.cs" />
-     <Compile Include="Assets\Scripts\PlatForm\pathDef.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerPos.cs" />
+     <Compile Include="Assets\Scripts\Enviroment\scoreCounter.cs" />
+     <Compile Include="Assets\Scripts\Items\coins.cs" />
      <Compile Include="Assets\Scripts\PlatForm\PathFollow.cs" />
+     <Compile Include="Assets\Scripts\Enemy\GroundPatrol.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PlatForm\verticalPlat.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Enviroment\soundManager.cs" />
+     <Compile Include="Assets\Scripts\PlatForm\pathDef.cs" />
+     <Compile Include="Assets\Scripts\BackGround\ParallaxBackground.cs" />
+     <Compile Include="Assets\Scripts\Enviroment\checkPoint.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyBullet.cs" />
+     <Compile Include="Assets\Scripts\Enemy\cannon.cs" />
+     <Compile Include="Assets\Scripts\Enemy\spike.cs" />
+     <Compile Include="Assets\Scripts\Enemy\FaceToPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
+     <Compile Include="Assets\Scripts\Enemy\NoXYEnemyBullet.cs" />
+     <Compile Include="Assets\Scripts\Enviroment\ExitLevel.cs" />
+     <Compile Include="Assets\Scripts\MainMenuScroll.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
