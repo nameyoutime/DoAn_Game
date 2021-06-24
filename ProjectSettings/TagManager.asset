@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - GM
   - EnemyBullet
+  - Sign
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

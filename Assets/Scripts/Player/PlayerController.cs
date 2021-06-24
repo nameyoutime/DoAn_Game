@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private PlayerHealth hp;
     private float horizontalMove, horizontalInput;
-    private bool m_FacingRight = true;
+    public bool m_FacingRight = true;
     private bool jumped = false, isFalling = false, isRunning = false, grounded = false, forceJump = false;
 
 
     private void Start()
     {
-        hp = GameObject.Find("/player/Health").GetComponent<PlayerHealth>();
+        hp = GameObject.Find("player/Health").GetComponent<PlayerHealth>();
         _rigidbody = GetComponent<Rigidbody2D>();
         footstep = GetComponent<AudioSource>();
     }

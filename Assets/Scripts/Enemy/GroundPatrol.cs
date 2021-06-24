@@ -40,4 +40,12 @@ public class GroundPatrol : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            Debug.Log("hit");
+        }
+    }
 }
