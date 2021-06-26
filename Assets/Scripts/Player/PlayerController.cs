@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
-    public float runSpeed = 40f;
     [SerializeField] private float m_JumpForce = 8f;
-    public Animator animatior;
-
+    public Slider slider;
+    public GameObject JumpingEff ;
+    public float runSpeed = 40f;
+    public float abilityTime = 10f;
     private AudioSource footstep;
+    private Animator animatior;
     private Vector3 m_Velocity = Vector3.zero;
     private Rigidbody2D _rigidbody;
     private PlayerHealth hp;
     private float horizontalMove, horizontalInput;
+    private bool doubleJump;
     public bool m_FacingRight = true;
-    private bool jumped = false, isFalling = false, isRunning = false, grounded = false, forceJump = false;
+    private bool jumped = false, isFalling = false, isRunning = false, forceJump = false;
+    public bool grounded = false, allowDoubleJump = false;
 
 
     private void Start()
@@ -23,6 +28,9 @@ public class PlayerController : MonoBehaviour
         hp = GameObject.Find("player/Health").GetComponent<PlayerHealth>();
         _rigidbody = GetComponent<Rigidbody2D>();
         footstep = GetComponent<AudioSource>();
+        animatior = GetComponent<Animator>();
+        slider.minValue = 0f;
+        slider.maxValue = abilityTime;
     }
 
     // Update is called once per frame
@@ -31,7 +39,11 @@ public class PlayerController : MonoBehaviour
         input();
         movement();
 
+
+
     }
+
+
 
     private void input()
     {
@@ -44,9 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         jump();
         checkStopMoving();
+        allowMultipleJump();
         move(horizontalMove * Time.fixedDeltaTime, horizontalInput);
     }
-    void checkStopMoving()
+    private void checkStopMoving()
     {
         if (_rigidbody.velocity.x == 0 || horizontalInput == 0)
         {
@@ -57,64 +70,78 @@ public class PlayerController : MonoBehaviour
             isRunning = true;
         }
     }
-
-    public void checkGrounded()
-    {
-        grounded = true;
-    }
-
     public void footsteep()
     {
         footstep.Play();
-    }
-
-    private void move(float move, float input)
-    {
-
-        // Move the character by finding the target velocity
-        Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody.velocity.y);
-        // And then smoothing it out and applying it to the character
-        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-        // If the input is moving the player right and the player is facing left...
-        if (move > 0 && !m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (move < 0 && m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-
-
     }
     public void checkForceJump()
     {
         forceJump = true;
     }
+    private void allowMultipleJump()
+    {
+        if (allowDoubleJump == true)
+        {
+            slider.gameObject.SetActive(true);
+            abilityTime -= Time.deltaTime;
+            slider.value = abilityTime;
+            if (abilityTime < 0)
+            {
+                slider.gameObject.SetActive(false);
+                allowDoubleJump = false;
+                abilityTime = 10f;
+            }
+        }
+    }
+    private void move(float move, float input)
+    {
+        Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody.velocity.y);
+        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        if (move > 0 && !m_FacingRight)
+        {
+            Flip();
+        }
+        else if (move < 0 && m_FacingRight)
+        {
+            Flip();
+        }
+    }
     private void jump()
     {
         if (forceJump == true)
         {
-            _rigidbody.AddForce(new Vector2(0f, 10f), ForceMode2D.Impulse);
+            _rigidbody.velocity = Vector2.up * m_JumpForce;
             jumped = true;
             animatior.SetBool("isJumping", true);
             animatior.SetBool("isFalling", false);
             soundManager.playSound("jump");
             forceJump = false;
         }
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump"))
         {
-            _rigidbody.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
-            jumped = true;
-            animatior.SetBool("isJumping", true);
-            animatior.SetBool("isFalling", false);
-            soundManager.playSound("jump");
-
+            if (grounded == true)
+            {
+                doubleJump = true;
+                // _rigidbody.AddForce(new Vector2(0f, doubleJumpForce), ForceMode2D.Impulse);
+                _rigidbody.velocity = Vector2.up * m_JumpForce;
+                jumped = true;
+                animatior.SetBool("isJumping", true);
+                animatior.SetBool("isFalling", false);
+                soundManager.playSound("jump");
+            }
+            else
+            {
+                if (doubleJump && allowDoubleJump)
+                {
+                    doubleJump = false;
+                    _rigidbody.velocity = Vector2.up * m_JumpForce;
+                    Destroy(Instantiate(JumpingEff,transform.position,transform.rotation),0.5f);
+                    // _rigidbody.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
+                    animatior.SetBool("isJumping", true);
+                    animatior.SetBool("isFalling", false);
+                    soundManager.playSound("jump");
+                }
+            }
         }
         if (_rigidbody.velocity.y < -0.1)
         {
@@ -129,25 +156,18 @@ public class PlayerController : MonoBehaviour
             animatior.SetBool("isFalling", false);
         }
     }
-
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.gameObject.tag == "Spike") || (other.gameObject.tag == "Enemy"))
+        if ((other.gameObject.tag == "Spike") || (other.gameObject.tag == "Enemy" || (other.gameObject.tag == "killingPlat")))
         {
             hp.lostHealth(1);
-
-            //theGM.GameOver();
-
         }
     }
 

@@ -13,9 +13,11 @@ public class popUp : MonoBehaviour
     {
         popUpBox.SetActive(true);
         text.text = Text;
+        Time.timeScale = 0f;
     }
     public void closePopUp()
     {
+        Time.timeScale = 1f;
         popUpBox.SetActive(false);
     }
 }

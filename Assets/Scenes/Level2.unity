@@ -5316,7 +5316,6 @@ Transform:
   - {fileID: 1091228652}
   - {fileID: 1895796967}
   - {fileID: 901097738}
-  - {fileID: 1736061648}
   - {fileID: 1817469969}
   - {fileID: 1582980566}
   - {fileID: 806096568}
@@ -6205,7 +6204,7 @@ GameObject:
   - component: {fileID: 212845412}
   m_Layer: 0
   m_Name: fallingPlat
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6402,6 +6401,10 @@ PrefabInstance:
     - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
       propertyPath: m_Name
       value: jumpAbleFlat (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
@@ -8625,6 +8628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jumpAbleFlat (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
 --- !u!1001 &713525931
@@ -9050,7 +9057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9125,7 +9132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9236,7 +9243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9520,7 +9527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10011,7 +10018,7 @@ GameObject:
   - component: {fileID: 1020974993}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10356,6 +10363,10 @@ PrefabInstance:
     - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
       propertyPath: m_Name
       value: jumpAbleFlat (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
@@ -11235,7 +11246,7 @@ GameObject:
   - component: {fileID: 1273116357}
   m_Layer: 0
   m_Name: jumpAbleFlat (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11376,7 +11387,7 @@ GameObject:
   - component: {fileID: 1279969379}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20554,6 +20565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jumpAbleFlat (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
 --- !u!1 &1432284126
@@ -21176,7 +21191,7 @@ GameObject:
   - component: {fileID: 1529005641}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21317,7 +21332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21629,75 +21644,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a984207b954879f438a5e92483386785, type: 3}
---- !u!1001 &1686246034
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 60127642}
-    m_Modifications:
-    - target: {fileID: 1970951194579368226, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: ShootSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368226, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: detectDistant
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.495
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 29.995752
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970951194579368239, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-      propertyPath: m_Name
-      value: turret
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
 --- !u!1 &1702050090
 GameObject:
   m_ObjectHideFlags: 0
@@ -21948,11 +21894,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ce3ec5954d073499ccd3a91b7da14f, type: 3}
---- !u!4 &1736061648 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1970951194579368227, guid: 7f1db31954569e84f8ddd1f0ec37bbe6, type: 3}
-  m_PrefabInstance: {fileID: 1686246034}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1736214340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22843,6 +22784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jumpAbleFlat (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
 --- !u!1001 &1856475789
@@ -22897,7 +22842,7 @@ GameObject:
   - component: {fileID: 1859721775}
   m_Layer: 0
   m_Name: fallingPlat
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23571,6 +23516,10 @@ MonoBehaviour:
   runSpeed: 40
   m_JumpForce: 8
   animatior: {fileID: 2034336361}
+  TrampolineForce: 10
+  doubleJumpForce: 8
+  m_FacingRight: 1
+  grounded: 0
 --- !u!82 &2034336360
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24297,7 +24246,7 @@ GameObject:
   - component: {fileID: 2127844223}
   m_Layer: 0
   m_Name: jumpAbleFlat (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24556,6 +24505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jumpAbleFlat
       objectReference: {fileID: 0}
+    - target: {fileID: 5493906435983209254, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcc5c2aef651324ca7bd218fa63bb12, type: 3}
 --- !u!1001 &6046049996600852910
@@ -24612,6 +24565,10 @@ PrefabInstance:
     - target: {fileID: 8070468334014279428, guid: ff11bee3adc55ad428ade889befd120f, type: 3}
       propertyPath: m_Name
       value: fallingPlat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070468334014279428, guid: ff11bee3adc55ad428ade889befd120f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff11bee3adc55ad428ade889befd120f, type: 3}

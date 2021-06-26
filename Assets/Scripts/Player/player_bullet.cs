@@ -13,7 +13,6 @@ public class player_bullet : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("player").GetComponent<PlayerController>();
-
     }
     private void Start()
     {
@@ -47,15 +46,11 @@ public class player_bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(other.gameObject);
             Destroy(Instantiate(eff, transform.position, this.transform.rotation), 0.5f);
         }
     }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        // Debug.Log("enemy");
-    }
+
 }

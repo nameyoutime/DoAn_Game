@@ -32,6 +32,7 @@ public class Sign : MonoBehaviour
             {
                 popUp pop = GameObject.Find("Enviroment/pauseMenu").GetComponent<popUp>();
                 pop.popup(text);
+                
             }
         }
 

@@ -20,8 +20,23 @@ public class groundCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            
-            parentScript.checkGrounded();
+
+            parentScript.grounded = true;
+        }
+        else
+        {
+
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        {
+            if (other.gameObject.tag == "Ground")
+            {
+                parentScript.grounded = false;
+            }
         }
     }
+
 }
