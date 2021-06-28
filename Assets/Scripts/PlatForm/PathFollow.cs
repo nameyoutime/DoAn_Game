@@ -30,11 +30,15 @@ public class PathFollow : MonoBehaviour
         if (Distance <= 0.1f)
             _TargetPoint = path.getNextPoint();
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            collision.transform.parent = transform;
+            Animator animator = other.gameObject.GetComponent<Animator>();
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+            
+            other.transform.parent = transform;
 
 
         }

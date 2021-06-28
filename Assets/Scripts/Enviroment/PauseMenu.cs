@@ -28,6 +28,10 @@ public class PauseMenu : MonoBehaviour
                 resume();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            onReload();
+        }
     }
     public void deathPanel()
     {

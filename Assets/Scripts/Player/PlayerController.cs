@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
     [SerializeField] private float m_JumpForce = 8f;
     public Slider slider;
-    public GameObject JumpingEff ;
+    public GameObject JumpingEff;
     public float runSpeed = 40f;
     public float abilityTime = 10f;
     private AudioSource footstep;
@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        input();
         movement();
+        input();
 
 
 
@@ -108,6 +108,24 @@ public class PlayerController : MonoBehaviour
     }
     private void jump()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow)&&grounded)
+        {
+            doubleJump = true;
+            _rigidbody.velocity = Vector2.up * m_JumpForce;
+            jumped = true;
+            animatior.SetBool("isJumping", true);
+            animatior.SetBool("isFalling", false);
+            soundManager.playSound("jump");
+        }
+        if (doubleJump && allowDoubleJump)
+        {
+            doubleJump = false;
+            _rigidbody.velocity = Vector2.up * m_JumpForce;
+            Destroy(Instantiate(JumpingEff, transform.position, transform.rotation), 0.5f);
+            animatior.SetBool("isJumping", true);
+            animatior.SetBool("isFalling", false);
+            soundManager.playSound("jump");
+        }
         if (forceJump == true)
         {
             _rigidbody.velocity = Vector2.up * m_JumpForce;
@@ -116,32 +134,6 @@ public class PlayerController : MonoBehaviour
             animatior.SetBool("isFalling", false);
             soundManager.playSound("jump");
             forceJump = false;
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (grounded == true)
-            {
-                doubleJump = true;
-                // _rigidbody.AddForce(new Vector2(0f, doubleJumpForce), ForceMode2D.Impulse);
-                _rigidbody.velocity = Vector2.up * m_JumpForce;
-                jumped = true;
-                animatior.SetBool("isJumping", true);
-                animatior.SetBool("isFalling", false);
-                soundManager.playSound("jump");
-            }
-            else
-            {
-                if (doubleJump && allowDoubleJump)
-                {
-                    doubleJump = false;
-                    _rigidbody.velocity = Vector2.up * m_JumpForce;
-                    Destroy(Instantiate(JumpingEff,transform.position,transform.rotation),0.5f);
-                    // _rigidbody.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
-                    animatior.SetBool("isJumping", true);
-                    animatior.SetBool("isFalling", false);
-                    soundManager.playSound("jump");
-                }
-            }
         }
         if (_rigidbody.velocity.y < -0.1)
         {
